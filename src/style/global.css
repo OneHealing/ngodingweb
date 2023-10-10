@@ -1,0 +1,175 @@
+
+:root {
+    --bg: #05161A;
+    --secondbg: #072E33;
+}
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: darkorange;
+    min-height: 2000px;
+}
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.navbar .nameWeb {
+    font-size: 2rem;
+    font-weight: 800;
+    color: whitesmoke;
+    font-family: 'PT Sans', sans-serif;
+    font-style: italic;
+}
+.navbar .nameWeb span {
+    color: rgb(255, 177, 31);
+}
+.navbar .navbar-val a {
+    color: white;
+    font-size: 1.3rem;
+    display: inline-block;
+    margin: 0 1.5rem;
+}
+.navbar .navbar-val a:hover {
+    cursor: pointer;
+    color: rgb(255, 177, 31);
+}
+.navbar .navbar-val a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid darkorange;
+    transform: scaleX(0);
+}
+.navbar .navbar-val a:hover::after {
+    transform: scaleX(0.5);
+    transition: 0.2s linear;
+}
+.navbar .navbar-icon a {
+    color: white;
+    margin: 1rem 1rem;
+}
+.navbar .navbar-icon a:hover {
+    cursor: pointer;
+    color: rgb(255, 177, 31);
+}
+body.dark {
+    background-color: #04181d;
+}
+#menu {
+    display: none;
+}
+/* navbar-end */
+/* hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/marek-piwnicki-Af6c85B5BOk-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba( 255, 140, 0, 1), rgba(255, 225, 225, 0) 25%);
+}
+.hero .content {
+    padding: 2rem 7%;
+    max-width: 60rem;
+}
+.hero .content h1 {
+    color: whitesmoke;
+    font-size: 6em;
+    text-shadow: 5px 5px 5px rgb(196, 196, 196);
+}
+.hero .content h1 span {
+    color: rgb(255, 177, 31);
+    text-shadow: 5px 5px 5px rgb(255, 115, 0);
+}
+.hero .content p {
+    font-size: 1.7rem;
+}
+.hero .content .cta {
+    color: whitesmoke;
+    font-size: 1.5em;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgb(226, 147, 0);
+    background-color: orange;
+}
+.hero .content .cta:hover {
+    cursor: pointer;
+}
+/* hero-end */
+/* about */
+.about {
+    padding: 10rem 10% 2rem;
+    text-align: center;
+}
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+.about h2 span {
+    color: greenyellow;
+}
+/* about-end */
+/* hp */
+@media (max-width:800px) {
+    html {
+        font-size: 80%;
+    }
+    #menu {
+        display: inline-block;
+    }
+    .navbar .navbar-val {
+        width: 250px;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        height: 100vh;
+        transition: 0.3s;
+    }
+    .navbar .navbar-val.active {
+        right: 0%;
+    }
+    .navbar .navbar-val a {
+        font-size: 1.7rem;
+        color: white;
+        display: block;
+        margin: 2rem 2rem;
+    }
+    .navbar .navbar-val a::after {
+        transform-origin: 0 0;
+    }
+    .navbar .navbar-val a:hover::after {
+        transform: scaleX(0.4);
+    }
+}
